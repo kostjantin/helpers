@@ -1,4 +1,3 @@
-<?php
 
 function seconds_to_read_form($time) {
     $hours = floor($time / 3600);
@@ -23,7 +22,7 @@ function ld($string, $type='INFO') {
     static $cur_memory = null;
 
     if (!$uniqid) {
-        $uniqid = uniqid('', true);
+        $uniqid = uniqid('', false);
     }
 
     if ($cur_time === null) {
@@ -46,5 +45,5 @@ function ld($string, $type='INFO') {
 
     $mem_diff = number_format(($cur_memory - $first_memory)/(1024*1024), 6);
 
-    echo "{$date_time} [{$type}] {$uniqid} - \t{$spent_time}\t{$execution_time}\t{$mem_diff}\t{$string}" . PHP_EOL;
+    echo "{$date_time} [{$type}] {$uniqid}\t{$spent_time} - {$execution_time}\t{$mem_diff}\t{$string}" . PHP_EOL;
 }
