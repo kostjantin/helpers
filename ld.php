@@ -1,4 +1,4 @@
-
+<?php
 function seconds_to_read_form($time) {
     $hours = floor($time / 3600);
     $minutes = floor(($time / 60) % 60);
